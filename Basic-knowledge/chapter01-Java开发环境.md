@@ -70,3 +70,30 @@ public class Test2 {
 
 
 ## 六、public
+
+```java
+
+public class Test4 {
+	/*  
+	1.public 类不是必须的，如果有的话public修饰的类名必须与源文件一致
+	2.public 有且只能有一个，这表示，每个编译单元都有单一的公共入口， 
+		用public类来表现。该接口可以按要求包含众多的支持包访问权限的类
+	3.每个类都会生成一个.class文件 */
+	public static void main(String[] args) {
+		System.out.println("T1....");
+		T2.main(args);
+}
+
+class T2 {
+	public static void main(String[] args) {
+		System.out.println("T2....");
+	}
+}
+
+class T3 {
+	public static void main(String[] args) {
+		System.out.println("T3....");
+	}
+}
+
+```
