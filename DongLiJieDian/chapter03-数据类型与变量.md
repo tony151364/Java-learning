@@ -69,8 +69,37 @@ public class IntTest {
         byte n = 127;  // byte o = 128;超出范围报错
         
         /*
-        7.
-       
+        7.计算机在底层存储数据的时候，一律存储的是“二进制的补码形式”
+        * 正数：原码、反码、补码的形式一样
+        * 负数：byte = -1
+        * 		原码：10000001（第一位表示正负）
+        * 		反码：11111110（符号位不变，其他位取反）
+        * 		补码：11111111（反码+1）
+        * */
+        byte p = (byte)150;
+        /*
+        * 补码：10010110 （150）
+        * 反码：10010101
+        * 原码：11101010 （-106）*/
+        System.out.println(p); // -106
+
+        /*
+        * 9.byte、short、char在做混合运算的时候，各自先转换成int再做运算*/
+        char c2 = 'a';
+        byte q = 1;
+        System.out.println(c2+q); 
+
+        short r = (short)(c2 + q);  
+        /* short r = (short)c2 + q 和 short r = c2 + q，错误，因为
+        编译器不知道运算后的数值是否超过short类型编译无法通过
+        */
+        System.out.println(r);
+
+        int s = 1;
+        // short t = s; 不行，因为编译器不知道s存的数值是什么，为了避免超出数值范围而报错
+        short t = 1; 
+
+
         
     }
 }
