@@ -18,7 +18,7 @@ java有两种数据类型：基本数据类型和引用数据类型
 ·引用数据类型：如字符串型String
 ```
 
-### 1. 整数型
+### 1. 整数型(integer)
 
 ```java
 public class IntTest {
@@ -84,7 +84,8 @@ public class IntTest {
         System.out.println(p); // -106
 
         /*
-        * 9.byte、short、char在做混合运算的时候，各自先转换成int再做运算*/
+        8.byte、short、char在做混合运算的时候，各自先转换成int再做运算
+        */
         char c2 = 'a';
         byte q = 1;
         System.out.println(c2+q); 
@@ -99,11 +100,126 @@ public class IntTest {
         // short t = s; 不行，因为编译器不知道s存的数值是什么，为了避免超出数值范围而报错
         short t = 1; 
 
+        /*
+        9.多种数据类型做混合运算的时候，最终的结果类型是“最大容量”对应的类型
+        but，char+short+byte这个除外，因为它们做混合运算时会先转换成int再做运算
+        */
+        long u = 19L;
+        char v = 'a';
+        short w = 100;
+        int a1 = 30;
+        System.out.println(u + v + w + a1);
+        // int x = u + v + w + a1; 从long转换到int需要强制类型转换。这个的计算结果为long类型
+        
+        /*
+        10. Java规定，int类型和int类型的计算结果依然是int类型，
+        所以java中的计算结果不一定是准确的，如除法
+        */
+        int temp = 10 / 3;
+        System.out.println(temp);  // 3
+        System.out.println(10 / 3);  // 3
+        
+        int temp2 = 1 / 2;
+        System.out.println(temp2);  // 0
+    }
+}
+```
 
+### 2.布尔型(boolean)
+
+```java
+
+/*
+1. 布尔类型多用于逻辑判断，通常放在条件位置中
+2. boolean sex = 1;  这是错误的，java中没有0和1，只有true和false。int类型无法转换为Boolean
+3. 8种数据类型中，除了boolean不能进行类型转换，其他的都可以
+*/
+
+public class BooleanTest {
+    
+    public static void main(String[] args) {
+        boolean sex = true;
+        
+        if(sex) {
+            System.out.println("男");
+        }else {
+            System.out.println("女");
+        }
+        
+        int a, b = 10, 20;
+        boolean flag = a < b;
+        System.out.println(flag);
+    }
+}
+```
+
+### 3. 浮点型(float)
+
+```java
+/*
+1.  float(4字节，单精度)、double(8字节，双精度) 二者存储的都是近似值，
+    因为计算机存储无限循环小数会浪费资源
+2.  java中规定，浮点数默认被当作double处理，如果想让浮点数当做float处理，
+    需要在数据后添加F/f
+3.  long占用8个字节，float占用4个字节，但是float表示范围 > long表示范围，
+    因为浮点数有幂的表示，可存储更大的数据
+4.  java中有一种精度更高的类型，可用于专门的财务软件：java.math.BigDecimal(引用数据类型)
+*/
+public class FloatTest {
+    
+    public static void main(String[] args) {
+        double pi = 3.1415926;
+        System.out.println(pi);
+        
+        // float f = 3.14; Error: 从double -> float 需要强制类型转换，且会损失精度
+        float f = 3.14f;  // 方法一
+        float f = (float)3.14;  // 方法二
+        
+        // int i = 10.0 / 5; Error: 因为程序先将5转换为double，再做运算，结果为double类型
+        int i = (int) 10.0/5;
+        System.out.println(i);
         
     }
 }
 ```
+
+### 4. 字符型(character)
+
+```java
+/*
+1.单引号, 占用2个字节,可存储一个汉字
+2.取值[0-65535]
+*/
+
+public class CharTest {
+    
+    public static void main(String[] args) {
+        char a = '汉';
+        char b = 97;  // 当一个整数没有超出char范围时，可以直接复制给char变量，int自动转为char字符
+        
+        System.out.println(a);
+        System.out.println(b);
+        
+        escape_character();  // 转义字符
+    }
+    
+    public static void escape_character() {
+        char c1 = '\t';// 制表符，相当于tab键
+        char c2 = '\n';
+        char c3 = '\\';
+        char x = '\u4e2d'; // 反斜杠u 表示后面是一个字符的Unicode编码，Unicode编码是16进制
+
+        System.out.println(c3); 
+        System.out.println(c1);
+        System.out.println(c2);
+        
+        System.out.print('\'');  // '
+        System.out.println("'");  // '        
+        System.out.println(x);  // 中
+    }
+}
+```
+
 
 
 ## 二、变量
@@ -156,6 +272,12 @@ public class localVariablesAndMemberVariables {
         double  b = 1.0;  // 局部变量 local variable
         
         System.out.println(b);
+        
+        // 以下三行占用不同的内存空间
+        System.out.println(122);
+        System.out.println(122);
+        System.out.println(122);
+		
     }
 }
 ```
