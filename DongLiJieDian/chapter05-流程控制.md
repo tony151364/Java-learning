@@ -41,6 +41,20 @@ PrintWriter out = new PrintWriter("myfile.txt", StandardChasets.UTF_8);
 
 # 二、流程控制
 
+```
+1.条件语句（分支语句）
+	1) if
+	2) switch
+2.循环语句
+	1) for
+	2) while
+	3) do...while
+3.转向语句
+	1) break
+	2) continue
+	3) return
+```
+
 ## 1.条件语句（分支语句）
 
 ### 1) if
