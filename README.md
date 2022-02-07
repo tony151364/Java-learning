@@ -12,7 +12,7 @@
   [第三章 数据类型与变量](DongLiJieDian/chapter03-数据类型与变量.md)  
   [第四章 运算符](DongLiJieDian/chapter04-运算符.md)  
   [第五章 流程控制（含基本输入输出） ](DongLiJieDian/chapter05-流程控制.md)   
-  第六章 字符串和数组  
+  [第六章 字符串和数组  ](DongLiJieDian/chapter06-字符串和数组.md)
   
 ### 2. Java面向对象
 
