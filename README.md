@@ -11,8 +11,8 @@
   [第二章 标识符和关键字](DongLiJieDian/chapter02-标识符和关键字.md)  
   [第三章 数据类型与变量](DongLiJieDian/chapter03-数据类型与变量.md)  
   [第四章 运算符](DongLiJieDian/chapter04-运算符.md)  
-  第五章 流程控制（含基本输入输出）  
-  第六章 数组和字符串  
+  [第五章 流程控制（含基本输入输出） ](DongLiJieDian/chapter05-流程控制.md)   
+  第六章 字符串和数组  
   
 ### 2. Java面向对象
 
