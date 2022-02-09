@@ -69,3 +69,62 @@ Java设计者认为共享的效率高于提取子串、拼接。确实，大多�
 参考：[三分钟理解Java中字符串的存储与赋值](https://www.cnblogs.com/nov5026/p/7248509.html)
 
 ## 4.检测字符串相等
+
+```java
+public class Equals {
+    public static void main(String[] args) {
+        String greeting = "hello";
+
+        /* 1. s.equals(t) , s与t相等返回true，否则返回false。
+           s与t可以是字符串变量也可以是字符串字面量*/
+        System.out.println("Hello".equals(greeting));  // false
+
+        // 2. 检验两个字符串是否相等，而不区分大小写：equalsIgnoreCase
+        System.out.println("Hello".equalsIgnoreCase(greeting));  // true
+
+        /* 3. == 号运算符只能确定两个字符串是否放置在（常量区）同一个位置上        
+           如果Java虚拟机始终共享相同的字符串，可以用 ==，
+           但实际上只是字符串的字面量共享，用+和substring操作的结果的字符串并不共享*/
+        System.out.println(greeting == "hello");  // true
+        System.out.println(greeting.substring(0, 3) == "hel");  // false
+    }
+}
+```
+
+## 5.空串和NULL
+
+```java
+public class NullString {
+    public static void main(String[] args) {
+        // 空串是长度为0的字符串，常用一下两种方法来检测
+        String str = "";
+        System.out.println(str.length() == 0);  // true
+        System.out.println(str.equals(""));  // true
+        
+        /* 空串是Java的一个对象，长度（0），内容（空）
+            null则代表没有任何变量与该类型相关 */
+        if(str == null);
+        if(str != null && str != "");  // 既不是空串也不是null
+    }
+}
+```
+## 6.码点与字符串遍历
+```java
+public class TraverseString {
+    public static void main(String[] args) {
+        String greeting = "hello";
+
+        /* Unicode中的每一个字符对应一个编号，这个编号就是码点-codepoint
+           Unicode是一个字典，*/
+        int cpCount = greeting.codePointCount(0, greeting.length());
+        System.out.println(cpCount);  // 5; 常用的Unicode字符使用一个代码单元表示
+        System.out.println(greeting.codePointAt(2));  // 108,即l在Unicode中的编号
+
+        // 返回特定位置的字符
+        System.out.println(greeting.charAt(0));  // h
+        System.out.println(greeting.charAt(3));  // l
+        
+        // 字符串的变量（学完数组再回来）
+    }
+}
+```
