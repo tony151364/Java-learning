@@ -44,6 +44,6 @@
 
 ## 参考内容
 [1.动力节点b站课程](https://www.bilibili.com/video/BV1Rx411876f?from=search&seid=15187065879977678871&spm_id_from=333.337.0.0)  
-[2.程序员小灰的Java学习路线](https://www.processon.com/view/link/61e780630e3e7406d94883c9#map)
-3. 《Java核心技术 卷Ⅰ》
-4. 《Java编程思想》
+[2.程序员小灰的Java学习路线](https://www.processon.com/view/link/61e780630e3e7406d94883c9#map)  
+3. 《Java核心技术 卷Ⅰ》  
+4. 《Java编程思想》  
