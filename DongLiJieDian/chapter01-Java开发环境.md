@@ -30,7 +30,7 @@
 	JVM：java虚拟机
   
   
- ## 四、类体、方法体
+ ## 五、类体、方法体
  ```java
  
  public class Test {  // 定义一个类命名为Test
@@ -48,31 +48,6 @@
 ```
 	
     
-## 五、args
-
-```java
-
-public class Test2 {
-
-    // args 可以改为其他名字，对于主方法来说只能修改这个位置    
-    public static void main(String[] args) {
-        System.out.println("Test2");
-        
-        String[] strString = new String[] {"and", "apple", "ban"};
-        main2(strString);
-    }
-    
-    public static void main2(String[] args) {
-        System.out.println("Test3");
-        
-        for(String i : args) {
-            System.out.println(i);  // output every elements of array String
-        }
-    }
-}
-
-```
-
 
 ## 六、public
 
