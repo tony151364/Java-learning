@@ -50,6 +50,7 @@
     // 一种更简单的打印数组的方式,返回一个包含数组元素的字符串，这些元素在中括号内
     System.out.println(Arrays.toString(a));  // "[0,0,...,]"
     
+    // for-each与for循环区别：在for-each循环体中改变对象中的值都是无效的。
 ```
 
 ## 4.数组拷贝
@@ -76,11 +77,56 @@ public class Message {
 
 ```
 
-``` java Message -apple banana cap ```
 ``` 
-Ouput:  -apple
-        banana
-        cap
+控制台运行输入：java Message -apple banana cap
+
+控制台运行输出:  -apple
+                banana
+                cap
 ```
 
+## 6.数组排序
 
+```java
+
+import java.util.Arrays;
+
+public class Message {
+    public static void main(String[] args) {
+        int[] a = new int[10];
+
+        for (int i = 0; i < a.length; i++)
+            a[i] = a.length - i;  // 逆序填充数组
+
+        System.out.println(Arrays.toString(a));  // "[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]"
+        Arrays.sort(a);// 采用优化了的快速排序，还有其他方法
+        System.out.println(Arrays.toString(a));  // "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+        
+    }
+}
+```
+
+## 7.多维数组
+
+```java
+public class TwoDimen {
+    public static void main(String[] args) {
+        // 二维数组
+        int[][] twoDimen = new int[3][3];
+        int[][] twoDimen2 = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+
+        // 1.for循环遍历
+        for (int i = 0; i < twoDimen.length; i++)
+            for (int j = 0; j < twoDimen[i].length; j++)
+                twoDimen[i][j] = i + j;
+
+        // 2.for each 遍历
+        for(int[] i:twoDimen)
+            for(int j: i)
+                System.out.println(j);
+
+        // 3. 快速打印
+        System.out.println(Arrays.deepToString(twoDimen));
+    }
+}
+```
