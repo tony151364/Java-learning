@@ -41,3 +41,19 @@ public class HelloWorld {
 }
 
 ```
+
+## 二、javac编译
+
+1.出错内容
+```
+javac Message.java
+```
+```
+Message.java:2: 错误: 编码 GBK 的不可映射字符 (0xAE)
+```
+
+2.出错原因
+```java在控制台编译时默认不支持gbk```
+
+3.解决方法
+```javac -encoding UTF-8 Message.java```
