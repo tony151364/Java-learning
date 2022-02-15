@@ -15,12 +15,12 @@
   [第六章 字符串](DongLiJieDian/chapter06-字符串.md)  
   [第七章 数组](DongLiJieDian/chapter07-数组.md)  
   
-### 2. Java面向对象
+### 2. [Java面向对象](Object-Oriented-Programming)
 
   第一章 基本概念  
     1.类  
     2.接口  
-    3.方法  
+    [3.方法](Object-Oriented-Programming/chapter01-方法.md)  
     4.重载  
     5.重写  
     
