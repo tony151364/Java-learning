@@ -45,6 +45,7 @@
 
 # 三、方法调用
 
+## 1.内外部方法调用
 
 ```java
 public class MethodTest01 {
@@ -84,3 +85,47 @@ public class MethodTest02 {
 }
 
 ```
+
+## 2. 与 if 语句相关的问题
+
+```java
+// 以下语句写在方法中编译会报错。
+// 因为该方法定义时必须有返回值，而编译器无法确定flag的值是true还是false，所以它认为if(flag)可能不执行
+public static int judgement() {
+    boolean flag = true;
+    
+    if(flag)
+        return 1;
+}
+
+// 解决方法 1
+public static int judgement() {
+    boolean flag = true;
+    
+    if(flag)
+        return 1;
+    else
+        return 0;
+}
+
+// 解决方法 2
+public static int judgement() {
+    boolean flag = true;
+    
+    if(flag)
+        return 1;
+    
+    return 0;
+}
+
+// 解决方法 3
+public static int judgement() {
+    boolean flag = true;
+    return flag ? 1:0;  // 总之，编译器必须保证该方法必须有返回值
+}
+```
+
+# 四、方法重载
+
+
+# 五、递归
