@@ -125,9 +125,9 @@ public static int judgement() {
 }
 ```
 
-# 四、递归与迭代
+# 四、迭代与递归
 
-## 1.[递归和迭代的区别](https://www.jianshu.com/p/32bcc45efd32)
+## 1.[迭代与递归的区别](https://www.jianshu.com/p/32bcc45efd32)
 - 在算法性能上，迭代往往要优于递归
 
 ## 2.斐波那契数列
@@ -192,14 +192,14 @@ public class factorial {
         System.out.println("迭代：" + x + "的阶乘是 " + fIteration(x));
     }
 
-    public static long fRecursion(long n){
+    public static long fRecursion(long n){  // 递归
         if(n == 0 || n == 1)
             return 1;
         else
             return n * fRecursion(n-1);
     }
 
-    public static long fIteration(long n){
+    public static long fIteration(long n){  // 迭代
         long sum = 1L;
 
         for(int i = 2; i <= n; i++)
