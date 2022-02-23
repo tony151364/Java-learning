@@ -125,4 +125,99 @@ public static int judgement() {
 }
 ```
 
-# 四、递归
+# 四、递归与迭代
+
+## 1.[递归和迭代的区别](https://www.jianshu.com/p/32bcc45efd32)
+- 在算法性能上，迭代往往要优于递归
+
+## 2.斐波那契数列
+
+```java
+// 递归形式
+public class FibonacciRecursion {
+    public static void main(String[] args) {
+    
+        for(int i = 1; i < 10; i++)
+            System.out.println(i + "layer: " + F(i));
+    }
+    
+    public static int F(int n) {
+        if(n == 1 || n == 2)
+            return 1;
+        else
+            return F(n-1) + F(n-2)
+    }
+}
+
+```
+
+```java
+// 迭代形式
+public class FibonacciIteration {
+    public static void main(String[] args) {
+        int f1 = 1, f2 = 1, fn;
+
+        for(int i = 1; i < 10; i++) {
+            if (i <= 2)
+                System.out.println(i + " layer: " + 1);
+            else {
+                fn = f1 + f2;
+                f1 = f2;
+                f2 = fn;
+                System.out.println(i + " layer: " + fn);
+            }
+        }    
+    }
+}
+```
+
+## 3.练习题
+
+### （1）n的阶乘
+
+```
+题目：编写两个方法，分别于递归和迭代的方式求n的阶乘
+```
+
+```java
+import java.util.Scanner;
+
+public class factorial {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("请输入正整数数：");
+        long x = s.nextLong();
+
+        System.out.println("递归：" + x + "的阶乘是 " + fRecursion(x));
+        System.out.println("迭代：" + x + "的阶乘是 " + fIteration(x));
+    }
+
+    public static long fRecursion(long n){
+        if(n == 0 || n == 1)
+            return 1;
+        else
+            return n * fRecursion(n-1);
+    }
+
+    public static long fIteration(long n){
+        long sum = 1L;
+
+        for(int i = 2; i <= n; i++)
+            sum *= i;
+
+        return sum;
+    }
+}
+
+```
+
+## （2）质数
+
+```
+编写一个方法，输出大于某个正整数n的最小质数
+```
+
+
+```
+控制台输入：java -x 可以选择调整栈的大小。在递归所需的栈空间不足时可使用
+```
