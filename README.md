@@ -20,8 +20,8 @@
   第一章 基本概念  
     1.类  
     2.接口  
-    [3.方法](Object-Oriented-Programming/chapter01-方法.md)  
-    4.重载  
+    3.[方法](Object-Oriented-Programming/chapter01-方法.md)  
+    4.[方法重载](Object-Oriented-Programming/chapter02-方法重载.md)  
     5.重写  
     
   第二章 三大特性  
