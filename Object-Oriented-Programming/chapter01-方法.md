@@ -171,6 +171,11 @@ public class FibonacciIteration {
 }
 ```
 
+```
+控制台输入：java -x 可以选择调整栈的大小。在递归所需的栈空间不足时可使用
+```
+
+
 ## 3.练习题
 
 ### （1）n的阶乘
@@ -217,7 +222,69 @@ public class factorial {
 编写一个方法，输出大于某个正整数n的最小质数
 ```
 
+```java
+// version 1
+import java.util.Scanner;
+
+public class Prime {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("请输入一个正整数：");
+        long n = s.nextLong();
+        System.out.println("大于" + n + "的最小质数为：" + primeNum(n));
+    }
+
+    public static long primeNum(long n) {
+        boolean flag = true;
+
+        while (true) {
+            n++;
+
+            for (int i = 2; i <= (long) Math.sqrt(n); i++)
+                if (n % i == 0) {
+                    flag = false;
+                    break;
+                }
+
+            if (flag)
+                return n;
+            else
+                flag = true;
+
+        }
+    }
+}
 
 ```
-控制台输入：java -x 可以选择调整栈的大小。在递归所需的栈空间不足时可使用
+
+```java
+
+// version 2
+public class PrimePlus {
+    public static void main(String[] args) {
+        java.util.Scanner scan = new java.util.Scanner(System.in);
+        int n = 1;
+        while(true) {
+            System.out.print("请输入一个正整数：");
+            n = scan.nextInt();
+            if(n<=0)
+                break;
+            PrintPrimeNumber(n);
+        }
+    }
+
+    public static void PrintPrimeNumber(int n) {
+        System.out.print("大于" + n + "的最小质数为：");
+        while(!JudgerPrimeNumber(++n));
+        System.out.println(n);
+    }
+
+    public static boolean JudgerPrimeNumber(int n) {
+        for(int i=2; i<Math.sqrt(n); i++) {
+            if(n%i==0)
+                return false;
+        }
+        return true;
+    }
+}
 ```
