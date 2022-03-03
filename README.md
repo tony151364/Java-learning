@@ -18,9 +18,9 @@
 ### [2. Java面向对象](Object-Oriented-Programming)
 
   [第一章 方法](Object-Oriented-Programming/chapter01-方法.md)  
-  [第二章 重载与重写](Object-Oriented-Programming/chapter02-方法重载.md)      
+  [第二章 重载与重写](Object-Oriented-Programming/chapter02-方法重载.md) https://www.runoob.com/java/java-override-overload.html        
   第三章 类和对象    
-  第四章 接口
+  第四章 接口https://www.runoob.com/java/java-interfaces.html  
   第四章 封装（Encapsulate）  
   第五章 继承（Inherance）  
   第六章 多态（Polymorphism）      
