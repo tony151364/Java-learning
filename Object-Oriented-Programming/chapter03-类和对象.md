@@ -61,3 +61,60 @@
 
 ## 2.类的定义
 在编程中：类 = 属性 + 方法；属性即状态，方法即动作。
+
+```
+[修饰符列表] class 类名 {
+	属性;
+	属性;  // 就是数据，以变量的方式存储
+	……
+
+	方法;
+	方法;  // 描述动作、行为
+	……  
+
+	类名 变量名 = new 类名();  // 对象的创建
+}
+```
+
+```java
+public class Student {
+	int stu_id;
+	String name;
+	String gender;
+	String address;
+}
+```
+
+```java
+public class Student {
+	public static void main(String[] args) {
+		// Student即是类名，又是引用数据类型，所有的class都是如此；有点像C语言中的结构体
+		Student s1 = new Student();  // 和 int i = 1; 一个道理
+
+		System.out.println(s1.stu_id);  // 0
+	}
+}
+```
+
+## 3.成员变量和实例变量
+
+- 对于成员变量来说，没有手动赋值时，系统默认赋值  
+
+|  类型   	  |   默认值  |
+| ------------  | --------- |
+| byte	    	|	0       |
+| short	    	|   0 		|
+| int 	    	|	0 		|
+| long 	    	|	0L 		|
+| float	    	|	0.0F 	|
+| double	    |	0.0 	|
+| boolean	    |	false 	|
+| char	    	|	\u0000 	|
+| 引用数据类型   |	null  |
+
+- 若不通过类名来直接访问“实例变量”，必须先将类进行实例化。
+- 比如：一个人有性别年龄，但人类（people class）没法说性别年龄，必须准确到人（对象）才可以
+
+## 4.对象和引用的区别
+- 对象是通过new出来的，在堆内存中存储
+- 引用是：变量中保存了内存地址，该地址指向堆内存当中的对象。（有点像C中的指针）
