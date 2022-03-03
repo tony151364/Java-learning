@@ -5,7 +5,7 @@
 
 ## 一、Java基础
 
-### 1. [Java基本语法](DongLiJieDian)
+### [1. Java基本语法](DongLiJieDian)
 
   [第一章 Java开发环境](DongLiJieDian/chapter01-Java开发环境.md)  
   [第二章 标识符和关键字](DongLiJieDian/chapter02-标识符和关键字.md)  
@@ -15,19 +15,16 @@
   [第六章 字符串](DongLiJieDian/chapter06-字符串.md)  
   [第七章 数组](DongLiJieDian/chapter07-数组.md)  
   
-### 2. [Java面向对象](Object-Oriented-Programming)
+### [2. Java面向对象](Object-Oriented-Programming)
 
-  第一章 基本概念  
-    1.类  
-    2.接口  
-    3.[方法](Object-Oriented-Programming/chapter01-方法.md)  
-    4.[方法重载](Object-Oriented-Programming/chapter02-方法重载.md)  
-    5.重写  
+  [第一章 方法](Object-Oriented-Programming/chapter01-方法.md)  
+  [第二章 重载与重写](Object-Oriented-Programming/chapter02-方法重载.md)      
+  第三章 类和对象接口  
     
-  第二章 三大特性  
-    1.封装  
-    2.继承  
-    3.多态  
+  第四章 三大特性  
+    1.封装（Encapsulate）  
+    2.继承（Inherance）  
+    3.多态（Polymorphism）  
     
   第三章访问权限  
     
