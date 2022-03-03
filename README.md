@@ -19,18 +19,13 @@
 
   [第一章 方法](Object-Oriented-Programming/chapter01-方法.md)  
   [第二章 重载与重写](Object-Oriented-Programming/chapter02-方法重载.md)      
-  第三章 类和对象接口  
-    
-  第四章 三大特性  
-    1.封装（Encapsulate）  
-    2.继承（Inherance）  
-    3.多态（Polymorphism）  
-    
-  第三章访问权限  
-    
-  第四章 static  
-  
-  第五章 final  
+  第三章 类和对象    
+  第四章 封装（Encapsulate）  
+  第五章 继承（Inherance）  
+  第六章 多态（Polymorphism）      
+  第七章访问权限      
+  第八章 static    
+  第九章 final  
 
 
 ### 3. 异常处理机制
