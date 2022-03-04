@@ -59,13 +59,13 @@
 - 对象--> 抽象 --> 类		
 ![class-and-object](class-and-object.png)
 
-## 2.类的定义
+## 2.类的定义与对象的创建
 在编程中：类 = 属性 + 方法；属性即状态，方法即动作。
 
 ```
 [修饰符列表] class 类名 {
 	属性;
-	属性;  // 就是数据，以变量的方式存储
+	属性;  // 状态，就是数据，以变量的方式存储
 	……
 
 	方法;
@@ -78,6 +78,7 @@
 
 ```java
 public class Student {
+	// 属性，在Java中以“成员变量”的方式存在
 	int stu_id;
 	String name;
 	String gender;
@@ -88,10 +89,11 @@ public class Student {
 ```java
 public class Student {
 	public static void main(String[] args) {
-		// Student即是类名，又是引用数据类型，所有的class都是如此；有点像C语言中的结构体
-		Student s1 = new Student();  // 和 int i = 1; 一个道理
-
-		System.out.println(s1.stu_id);  // 0
+		// Student即是类名，有时类型名，属于引用数据类型，所有的class都是如此；有点像C语言中的结构体
+		Student zhangSan = new Student();  // 和 int i = 1; 一个道理；
+		Student liSi = new Student();  // new Student();是一个对象
+		Student wangWu = new Student();  // student类实例化了3个对象
+		System.out.println(zhangSan.stu_id);  // 0
 	}
 }
 ```
@@ -115,6 +117,29 @@ public class Student {
 - 若不通过类名来直接访问“实例变量”，必须先将类进行实例化。
 - 比如：一个人有性别年龄，但人类（people class）没法说性别年龄，必须准确到人（对象）才可以
 
+
+# 三、对象的创建和使用
+```java
+public class Student {
+	// 属性，在Java中以“成员变量”的方式存在
+	int stu_id;
+	String name;
+	String gender;
+	String address;
+}
+```
+
+```java
+public class StudentTest {
+	public static void main(String[] args) {
+	// 创建两个学生对象
+	Student s1 = new Student();
+	
+	Student s2 = new Student();
+	}
+}
+```
+
 ## 4.对象和引用的区别
-- 对象是通过new出来的，在堆内存中存储
+- 对象是通过new出来的，在堆内存中存储；new 是一个运算符，专门负责对象的创建
 - 引用是：变量中保存了内存地址，该地址指向堆内存当中的对象。（有点像C中的指针）
