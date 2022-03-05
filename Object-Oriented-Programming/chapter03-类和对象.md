@@ -98,7 +98,12 @@ public class Student {
 }
 ```
 
-## 3.成员变量和实例变量
+
+
+
+# 三、对象的创建和使用
+
+## 1.成员变量和实例变量
 
 - 对于成员变量来说，没有手动赋值时，系统默认赋值  
 
@@ -118,28 +123,120 @@ public class Student {
 - 比如：一个人有性别年龄，但人类（people class）没法说性别年龄，必须准确到人（对象）才可以
 
 
-# 三、对象的创建和使用
+## 2.对象和引用的区别
+- 对象是通过new出来的，在堆内存中存储；new 是一个运算符，专门负责对象的创建
+- 引用是：变量中保存了内存地址，该地址指向堆内存当中的对象。（有点像C中的指针）
+
 ```java
 public class Student {
-	// 属性，在Java中以“成员变量”的方式存在
-	int stu_id;
-	String name;
-	String gender;
-	String address;
+    // 属性，在Java中以“成员变量”的方式存在
+    int no;
+    String name;
+    int age;
+    boolean sex;
+    String address;
 }
 ```
 
 ```java
 public class StudentTest {
-	public static void main(String[] args) {
-	// 创建两个学生对象
-	Student s1 = new Student();
-	
-	Student s2 = new Student();
-	}
+    public static void main(String[] args) {
+        // 创建两个学生对象；s1,s2这局部变量叫做引用
+        Student s1 = new Student();
+
+        System.out.println(s1.no);  // 访问实例变量：引用.变量名
+        System.out.println(s1.name);
+        System.out.println(s1.age);
+        System.out.println(s1.sex);
+        System.out.println(s1.address);
+
+        System.out.println("——————————————————————————");
+
+        // s2也是局部变量，也叫做引用
+        Student s2 = new Student();
+        System.out.println(s2.no);
+        System.out.println(s2.name);
+        System.out.println(s2.age);
+        System.out.println(s2.sex);
+        System.out.println(s2.address);
+
+        System.out.println("——————————————————————————");
+        s1.no = 100;
+        s1.name = "zhangSan";
+        s1.age = 19;
+        s1.sex = true;
+        s1.address = "河南郑州";
+        System.out.println(s1.no);  // 访问实例变量：引用.变量名
+        System.out.println(s1.name);
+        System.out.println(s1.age);
+        System.out.println(s1.sex);
+        System.out.println(s1.address);
+    }
 }
 ```
 
-## 4.对象和引用的区别
-- 对象是通过new出来的，在堆内存中存储；new 是一个运算符，专门负责对象的创建
-- 引用是：变量中保存了内存地址，该地址指向堆内存当中的对象。（有点像C中的指针）
+![student-memory](student-memory.png)
+
+### 3.一个作业
+
+```java
+public class Address {
+	// 一个家庭住址3个属性
+	String city;
+	
+	String street;
+	
+	String zipcode;
+}
+```
+
+```java
+public class User {
+	int id;  // 用户id
+	
+	String userName;
+	
+	Address addr;
+}
+```
+
+```java
+public class Test {
+    public static void main(String[] args) {
+
+        User Jack = new User();
+        Address a = new Address();
+
+        a.city = "河南郑州";
+        a.street = "博学路街道";
+        a.zipcode = "450000";
+
+        Jack.id = 112;
+        Jack.userName = "Jack";
+        Jack.addr = a;
+
+        System.out.println("Jack`s id :" + Jack.id);
+        System.out.println("Jack`s userName :" + Jack.userName);
+
+        // addr是一个对象，所以会打印addr在堆内存的地址
+        System.out.println("Jack`s addr :" + Jack.addr);  // Address@6d03e736
+
+        System.out.println("Jack`s addr`s city :" + Jack.addr.city);
+        System.out.println("Jack`s addr`s street :" + Jack.addr.street);
+        System.out.println("Jack`s addr`s .zipcode :" + Jack.addr.zipcode);
+
+        Jack.addr.city = "杭州";
+        System.out.println("Jack`s addr`s city :" + Jack.addr.city);
+
+        User Rose = new User();
+        System.out.println("Rose's useName : " + Rose.userName);
+        
+        /*
+        Error: Cannot assign field "city" because "Rose.addr" is null
+        
+        Rose.addr.city = "Beijing";
+        System.out.println("Rose`s hometown is " + Rose.addr.city);
+         */
+    }
+}
+```
