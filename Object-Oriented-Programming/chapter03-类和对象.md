@@ -80,7 +80,7 @@
 public class Student {
 	// 属性，在Java中以“成员变量”的方式存在
 	int stu_id;
-	String name;
+	String name;  // 这种成员变量又被称为“实例变量”
 	String gender;
 	String address;
 }
