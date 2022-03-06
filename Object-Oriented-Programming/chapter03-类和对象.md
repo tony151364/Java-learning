@@ -201,6 +201,8 @@ public class User {
 ```
 
 ```java
+// 第一步：类加载
+// 第二步：调用UserTest类的main方法（方法调用要压栈）
 public class Test {
     public static void main(String[] args) {
 
@@ -213,7 +215,7 @@ public class Test {
 
         Jack.id = 112;
         Jack.userName = "Jack";
-        Jack.addr = a;
+        Jack.addr = a;  // 引用不一定是局部变量，Jack.addr在堆中存储，它是成员变量，也是实例变量
 
         System.out.println("Jack`s id :" + Jack.id);
         System.out.println("Jack`s userName :" + Jack.userName);
@@ -240,3 +242,50 @@ public class Test {
     }
 }
 ```
+![homewoek-address](homework-address.png)
+
+# 四、引用数据类型
+
+## 1.属性是引用数据类型怎么访问
+
+```java
+
+public class ReferenceDataType {
+    A a;  // 成员变量中的实例变量，必须先创建对象，然后通过引用来访问
+
+    public static void main(String[] args) {
+        ReferenceDataType t = new ReferenceDataType();
+        A a = new A();
+        B b = new B();
+        C c = new C();
+        D d = new D();
+        
+        t.a = a;
+        a.b = b;
+        b.c = c;
+        c.d = d;
+
+        System.out.println(t.a.b.c.d.i);  // 0
+    }
+
+}
+
+class A{
+    B b;
+
+}
+
+class B{
+    C c;
+}
+
+class C{
+    D d;
+}
+
+class D{
+    int i;
+}
+```
+
+## 2.空指针异常
