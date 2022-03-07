@@ -289,3 +289,35 @@ class D{
 ```
 
 ## 2.空指针异常
+
+```java
+
+
+
+// 什么情况下会发生空指针异常？
+public class NullPointerException {
+    public static void main(String[] args) {
+        Customer c = new Customer();
+
+        System.out.println(c.id);  // 0
+        c.id = 996;
+        System.out.println(c.id);  // 996
+        c = null;
+
+        /*
+        空指针异常错误：
+		该对象没有“引用”指向它了，java中规定程序员没有权限对堆内存操作，
+		此时这个对象只能等待垃圾回收机制回收，GC会将这个垃圾对象释放掉
+		垃圾回收机器GC主要回收的是堆内存中的垃圾数据，当对象没有任何引用的时候就会被回收
+		 */
+		System.out.println(c.id);  // 空指针异常
+
+    }
+
+}
+
+class Customer {
+    int id; // 客户id
+}
+
+```
