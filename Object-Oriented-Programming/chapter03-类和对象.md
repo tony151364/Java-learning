@@ -1,3 +1,8 @@
+- 面向对象与面向过程
+- 类和对象
+- 对象的创建和使用
+- 引用数据类型
+- 方法调用时参数传递问题
 
 # 一、面向对象与面向过程
 
@@ -294,7 +299,8 @@ class D{
 
 
 
-// 什么情况下会发生空指针异常？
+// 出现空指针异常的前提条件：
+// “空引用”访问实例【对象相关】的数据时，都会出现空指针异常
 public class NullPointerException {
     public static void main(String[] args) {
         Customer c = new Customer();
@@ -321,3 +327,6 @@ class Customer {
 }
 
 ```
+
+## 五、方法调用时参数传递问题
+
